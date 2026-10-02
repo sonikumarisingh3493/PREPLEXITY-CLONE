@@ -1,0 +1,58 @@
+use_default_settings: true
+
+general:
+  instance_name: "Local SearXNG"
+
+server:
+  secret_key: "mysecretkey"
+  bind_address: "0.0.0.0"
+  port: 8080
+  image_proxy: false
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  formats:
+    - html
+    - json
+
+botdetection:
+  enabled: false
+
+engines:
+  - name: google
+    disabled: false
+
+  - name: duckduckgo
+    disabled: false
+
+  - name: wikipedia
+    disabled: false
+
+  - name: reddit
+    disabled: false
+
+  - name: youtube
+    disabled: false
+
+  - name: arxiv
+    disabled: false
+
+  - name: pubmed
+    disabled: false
+
+    engines:
+  - name: bing images
+    disabled: false
+
+  - name: unsplash
+    disabled: false
+
+  - name: bing videos
+    disabled: false
+
+  - name: dailymotion
+    disabled: false
+
+  - name: brave.videos
+    disabled: false
