@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 35px 20px 130px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 8px 0 0;
+
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+/* ================= MODE BUTTONS ================= */
+
+.modes {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.modes button {
+  border: none;
+
+  background: #1e293b;
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 25px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.modes button:hover {
+  background: #334155;
+}
+
+.modes button.active {
+  background: #2563eb;
+}
+
+/* ================= CHAT ================= */
+
+.chat-area {
+  width: 100%;
+  max-width: 900px;
+
+  margin-top: 35px;
+
+  padding-bottom: 30px;
+}
+.suggestions {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.suggestions h3 {
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+.suggestions button {
+  display: block;
+  width: 100%;
+
+  margin-bottom: 10px;
+  padding: 15px 18px;
+
+  text-align: left;
+
+  background: #172033;
+  color: white;
+
+  border: 1px solid #334155;
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.suggestions button:hover {
+  background: #24324a;
+  border-color: #2563eb;
+}
+
+/* ================= BOTTOM SEARCH ================= */
+
+/* ================= BOTTOM SEARCH ================= */
+
+.bottom-search {
+  position: fixed;
+
+  left: 50%;
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  width: min(1100px, calc(100% - 40px));
+
+  z-index: 9999;
+}
+
+
+/* SEARCH BAR */
+
+.search-bar {
+  width: 100%;
+  min-height: 85px;
+
+  display: flex;
+  align-items: center;
+
+  background: #172033;
+
+  border: 1px solid #334155;
+
+  border-radius: 20px;
+
+  padding: 10px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+
+/* INPUT */
+
+.search-bar input {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+
+  height: 65px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  padding: 0 22px;
+
+  font-size: 20px;
+}
+
+
+/* PLACEHOLDER */
+
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* SEND BUTTON */
+
+.search-bar button {
+  height: 65px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding: 0 30px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* BUTTON HOVER */
+
+.search-bar button:hover {
+  background: #1d4ed8;
+}
+
+
+/* DISABLED */
+
+.search-bar button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+/* ================= CLICKABLE LINKS ================= */
+
+.message-content a {
+  color: #60a5fa;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.message-content a:hover {
+  color: #93c5fd;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 25px 12px 120px;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+
+  .modes {
+    gap: 8px;
+  }
+
+  .modes button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .bottom-search {
+  width: calc(100% - 20px);
+  bottom: 10px;
+}
+
+  .search-bar input {
+    font-size: 16px;
+  }
+
+  .search-bar button {
+    padding: 0 18px;
+  }
+}

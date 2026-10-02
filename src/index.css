@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #94a3b8;
+}
+
+.modes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.modes button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modes button:hover {
+  background: #334155;
+}
+
+.modes button.active {
+  background: #2563eb;
+}
+
+.chat {
+  min-height: 350px;
+  background: #111827;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  line-height: 1.5;
+}
+
+.message.user {
+  background: #2563eb;
+}
+
+.message.assistant {
+  background: #1f2937;
+}
+
+.input-area {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  background: #1e293b;
+  color: white;
+}
+
+.input-area input::placeholder {
+  color: #94a3b8;
+}
+
+.input-area button {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 16px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-area button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.media-card {
+  background: #1f2937;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.media-card:hover {
+  transform: translateY(-4px);
+}
+
+.media-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.media-card p {
+  padding: 12px;
+  font-size: 14px;
+}
