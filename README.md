@@ -1,75 +1,92 @@
-# React + TypeScript + Vite
+. Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Perplexity Clone is an AI-powered search and question-answering application inspired by Perplexity. The main purpose of the project is to allow users to enter a natural-language query and receive an AI-generated answer based on information retrieved from the web.
 
-Currently, two official plugins are available:
+Instead of simply returning a list of search results, the system uses AI agents, web search, LLMs, and retrieval workflows to process the query and generate a meaningful response.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Your major contribution was focused on the backend and AI workflow, including the integration of 8 specialized agents.
 
-## React Compiler
+Developed the backend architecture using Node.js and TypeScript.
+Integrated Gemini APIs for LLM-based processing.
+Integrated SearXNG for web search and information retrieval.
+Implemented 8 specialized AI agents for different query types.
+Created separate workflows for web, Reddit, YouTube, images, videos, and writing-related queries.
+Implemented search-result processing and relevance filtering.
+Worked with RAG/retrieval concepts to provide context to the LLM.
+Implemented streaming responses so generated answers can be delivered progressively.
+Connected the backend APIs with the frontend application.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+PERPLEXITY CLONE
+│
+├── Frontend
+│   ├── App.tsx
+│   ├── SearchBar
+│   ├── MessageList
+│   ├── ImageGrid
+│   └── VideoGrid
+│
+├── Backend
+│   ├── API Routes
+│   ├── Agents / Runners
+│   ├── LLM Services
+│   ├── Search Services
+│   ├── RAG / Retrieval
+│   └── Utilities
+│
+├── AI / LLM Layer
+│   ├── Gemini
+│   ├── Prompt Processing
+│   └── Response Generation
+│
+└── Search / Retrieval
+    └── SearXNG
 
-## Expanding the ESLint configuration
+    How project works 
+    User Query
+     ↓
+Frontend Search Bar
+     ↓
+Backend API
+     ↓
+Query Analysis
+     ↓
+Select Appropriate Agent
+     ↓
+Web/Search Retrieval
+     ↓
+Process & Filter Results
+     ↓
+LLM / Gemini
+     ↓
+Generate Answer
+     ↓
+Stream Response
+     ↓
+Frontend
+     ↓
+User
+Backend receives the query
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Your Node.js/TypeScript backend receives the request through an API endpoint.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The backend determines what type of operation is required.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+For example:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+/api/chat
+/api/reddit
+/api/youtube
+/api/images
+/api/videos
+/api/write
 
-```
+Technologies Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For your project description, you can list:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Frontend: React.js, TypeScript, HTML, CSS
+Backend: Node.js, TypeScript
+AI/LLM: Google Gemini APIs
+Search: SearXNG
+AI Architecture: Multi-Agent Workflows, RAG
+Tools: Git, GitHub, VS Code
